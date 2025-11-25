@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { setUserId, setAccCreated } from "../../utils/storage";
@@ -19,24 +20,28 @@ export default function Manager() {
     setUserId(id);
 
     fetchBasicProfile(id)
-      .then((res: any) => {
-        const acc = res?.data?.accCreated === 1 ? "1" : "0";
-        setAccCreated(acc as "0" | "1");
+      .then((res) => {
+        const acc = res?.accCreated == 1 ? "1" : "0";
+        setAccCreated(acc);
 
         if (acc === "1") router.replace("/dashboard");
         else router.replace("/create-profile");
       })
-      .catch(() => router.replace("/create-profile"));
-  }, []);
+      .catch(() => {
+        router.replace("/create-profile");
+      });
+  }, [params, router]);
 
   return (
     <div
       style={{
         height: "100vh",
+        background: "black",
         display: "flex",
-        alignItems: "center",
         justifyContent: "center",
-        fontSize: 20,
+        alignItems: "center",
+        color: "white",
+        fontSize: 22,
       }}
     >
       Finalizing Login...

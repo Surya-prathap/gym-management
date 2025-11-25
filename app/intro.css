@@ -1,0 +1,59 @@
+.intro-page {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  background: url("https://tse2.mm.bing.net/th/id/OIP.ay6z1-hDdskNpU58Ek0mjAHaEo?pid=Api&P=0&h=180")
+    center center no-repeat fixed;
+  background-size: cover;
+  padding: 0 20px;
+}
+
+.intro-box {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  padding: 22px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  border-radius: 16px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.intro-title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.intro-sub {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.intro-btn {
+  width: 100%;
+  padding: 14px;
+  background: #baff27;
+  border-radius: 14px;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (min-width: 601px) {
+  .intro-page {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .intro-page {
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 34px;
+  }
+}

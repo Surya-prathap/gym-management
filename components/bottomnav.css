@@ -1,0 +1,35 @@
+.bottom-nav {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(12px);
+  padding: 12px 26px;
+  border-radius: 30px;
+  display: flex;
+  gap: 26px;
+  z-index: 120;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.bottom-item {
+  color: #fff;
+  font-size: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.bottom-item:active {
+  transform: scale(0.92);
+}
+
+@media (min-width: 900px) {
+  .bottom-nav {
+    display: none;
+  }
+}

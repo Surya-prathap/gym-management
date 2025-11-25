@@ -1,13 +1,11 @@
 "use client";
 
-export const dynamic = "force-dynamic";
-
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { setUserId, setAccCreated } from "../../utils/storage";
 import { fetchBasicProfile } from "../../api/profile";
 
-export default function Manager() {
+function ManagerInner() {
   const router = useRouter();
   const params = useSearchParams();
 
@@ -48,5 +46,29 @@ export default function Manager() {
     >
       Finalizing Login...
     </div>
+  );
+}
+
+export default function Manager() {
+  return (
+    <Suspense
+      fallback={
+        <div
+          style={{
+            height: "100vh",
+            background: "black",
+            color: "white",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            fontSize: 22,
+          }}
+        >
+          Loading...
+        </div>
+      }
+    >
+      <ManagerInner />
+    </Suspense>
   );
 }

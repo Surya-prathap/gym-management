@@ -2,7 +2,7 @@
   height: 100vh;
   width: 100%;
   display: flex;
-  background: url("https://tse2.mm.bing.net/th/id/OIP.ay6z1-hDdskNpU58Ek0mjAHaEo?pid=Api&P=0&h=180")
+  background: url("https://as2.ftcdn.net/v2/jpg/05/24/58/63/1000_F_524586378_YUHOSouIpIxG44uQSdGiRtHKGPuK7SEa.jpg")
     center center no-repeat fixed;
   background-size: cover;
   padding: 0 20px;
@@ -55,5 +55,15 @@
     justify-content: center;
     align-items: flex-end;
     padding-bottom: 34px;
+  }
+
+  .intro-page {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background: url("https://img.freepik.com/premium-photo/fitness-smile-portrait-friends-gym-teamwork-support-workout-motivation-coaching-health-with-people-training-sports-center-cardio-endurance-wellness-challenge_590464-130787.jpg?w=1060")
+      center center no-repeat fixed;
+    background-size: cover;
+    padding: 0 20px;
   }
 }

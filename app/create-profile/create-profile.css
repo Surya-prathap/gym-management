@@ -1,18 +1,28 @@
 :root {
-  --border: 1px solid rgba(255, 255, 255, 0.18);
-  --card-bg: rgba(255, 255, 255, 0.06);
-  --circle-bg: rgba(255, 255, 255, 0.1);
-  --circle-active: #baff27;
-  --text-light: #fff;
-  --subtle: #cbd5e1;
-  --radius: 14px;
+  --bg-main: #0f2a2f;
+  --card-bg: rgba(26, 58, 64, 0.85);
+  --dark-card: #1a3a40;
+  --teal-card: #1f4d52;
+
+  --border: 1px solid rgba(255, 255, 255, 0.12);
+  --circle-bg: rgba(255, 255, 255, 0.12);
+
+  --circle-active: #c6ff1a;
+  --primary-btn: #c6ff1a;
+  --primary-text-dark: #000;
+
+  --text-light: #ffffff;
+  --text-gray: #d0d0d0;
+  --icon-gray: #aeb5b9;
+
+  --radius: 16px;
 }
 
 .create-profile-page {
   width: 100%;
   height: 100vh;
   overflow-y: auto;
-  background: #0e0e0e;
+  background: var(--bg-main);
   padding: 16px;
   box-sizing: border-box;
   display: flex;
@@ -23,13 +33,13 @@
   width: 100%;
   max-width: 480px;
   margin: auto;
-  padding-bottom: 90px;
+  padding-top: 40px;
+  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
-/* HEADER */
 .cp-header {
   display: flex;
   justify-content: space-between;
@@ -47,7 +57,7 @@
   height: 58px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid rgba(255, 255, 255, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.28);
 }
 
 .cp-hi {
@@ -58,22 +68,21 @@
 
 .cp-rablo {
   font-size: 13px;
-  color: #baff27;
+  color: var(--primary-btn);
 }
 
 .cp-logout {
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.15);
   padding: 8px 14px;
   border: none;
   border-radius: 10px;
   color: white;
 }
 
-/* WELCOME CARD */
 .cp-welcome-card {
-  background: var(--card-bg);
+  background: var(--dark-card);
   border: var(--border);
-  padding: 16px;
+  padding: 18px;
   border-radius: var(--radius);
 }
 
@@ -84,12 +93,11 @@
 }
 
 .cp-sub {
-  color: var(--subtle);
+  color: var(--text-gray);
   font-size: 15px;
   margin-top: 4px;
 }
 
-/* PROGRESS TRACKER */
 .cp-progress-row {
   margin-top: 18px;
   display: flex;
@@ -106,53 +114,13 @@
 .cp-circle {
   background: var(--circle-bg);
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cp-circle.active {
   background: var(--circle-active);
-}
-
-/* Mobile circle sizes */
-@media (max-width: 768px) {
-  .cp-circle {
-    width: 38px;
-    height: 38px;
-  }
-  .cp-percent {
-    font-size: 16px;
-  }
-
-  .cp-img {
-    color: white;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-  }
-
-  .cp-img svg {
-    flex-shrink: 0;
-  }
-
-  .cp-img span {
-    white-space: nowrap;
-    font-size: 12px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
-
-/* Desktop circle sizes */
-@media (min-width: 769px) {
-  .cp-circle {
-    width: 60px;
-    height: 60px;
-  }
-  .cp-percent {
-    font-size: 20px;
-  }
 }
 
 .cp-percent {
@@ -164,16 +132,15 @@
 .cp-btn {
   width: 100%;
   margin-top: 16px;
-  background: #baff27;
-  color: #000;
+  background: var(--primary-btn);
+  color: var(--primary-text-dark);
   font-weight: 700;
   padding: 12px 0;
-  border-radius: 12px;
+  border-radius: 14px;
   border: none;
   font-size: 16px;
 }
 
-/* 4 IMAGE ROW */
 .cp-image-row {
   display: flex;
   justify-content: space-between;
@@ -184,22 +151,24 @@
 .cp-img {
   flex: 1;
   height: 75px;
-  width: 120px;
-  color: white;
+  color: var(--text-light);
   font-size: 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  background: var(--card-bg);
+  gap: 6px;
+  background: var(--teal-card);
   border: var(--border);
   border-radius: var(--radius);
-  background-size: cover;
-  background-position: center;
 }
 
-/* Two cards under image row */
+.cp-img svg,
+.cp-card svg,
+.cp-bottom-card svg {
+  color: var(--icon-gray);
+}
+
 .cp-two-cards {
   display: flex;
   gap: 10px;
@@ -208,7 +177,17 @@
 .cp-card {
   flex: 1;
   height: 90px;
-  background: var(--card-bg);
+  background: var(--teal-card);
+  border: var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cp-bottom-card {
+  height: 90px;
+  background: var(--teal-card);
   border: var(--border);
   border-radius: var(--radius);
   display: flex;
@@ -221,24 +200,50 @@
   width: 22px;
   height: 22px;
   font-size: 20px;
-  color: white;
-  background: var(--card-bg);
+  color: var(--icon-gray);
+  background: transparent;
   border: none;
   border-radius: 50%;
 }
 
-/* Large bottom card */
-.cp-bottom-card {
-  height: 90px;
-  background: var(--card-bg);
-  border: var(--border);
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media (max-width: 768px) {
+  .cp-circle {
+    width: 38px;
+    height: 38px;
+  }
+  .cp-percent {
+    font-size: 15px;
+  }
+
+  .cp-img span {
+    white-space: nowrap;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .cp-wrapper {
+    width: 100%;
+    max-width: 480px;
+    margin: auto;
+    padding-top: 0;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
 }
 
-/* DESKTOP VERSION */
+@media (min-width: 769px) {
+  .cp-circle {
+    width: 60px;
+    height: 60px;
+  }
+  .cp-percent {
+    font-size: 20px;
+  }
+}
+
 @media (min-width: 900px) {
   .create-profile-page {
     padding-top: 40px;
@@ -258,32 +263,12 @@
     width: 30px;
     height: 30px;
     font-size: 30px;
-    color: white;
-    background: var(--card-bg);
-    border: none;
-    border-radius: 50%;
-  }
-
-  body {
-    padding-top: 60px;
   }
 
   .cp-desktop-grid {
     display: grid;
     grid-template-columns: 380px 1fr;
     gap: 24px;
-  }
-
-  .cp-left-box {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .cp-right-box {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
   }
 
   .cp-img {

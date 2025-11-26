@@ -1,5 +1,3 @@
-// utils/storage.ts
-
 export function setUserId(id: string) {
   if (typeof window !== "undefined") localStorage.setItem("uid", id);
 }

@@ -9,7 +9,7 @@ export default function Login() {
   const r = useRouter();
 
   function loginWithGoogle() {
-    r.replace("/create-profile");
+    window.location.href = `${BASE}/auth/google/manager`;
   }
 
   function loginWithFacebook() {

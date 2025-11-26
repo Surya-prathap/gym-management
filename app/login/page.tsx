@@ -48,11 +48,6 @@ export default function Login() {
           />
           Continue with LinkedIn
         </button>
-        <button onClick={() => r.replace("/create-profile")}>create</button>
-        <button onClick={() => r.replace("/create-profile/complete-profile")}>
-          complete
-        </button>
-        <button onClick={() => r.replace("/dashboard")}>dashboard</button>
       </div>
     </div>
   );

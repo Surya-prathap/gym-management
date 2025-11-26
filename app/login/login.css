@@ -77,4 +77,7 @@
     background-size: cover;
     padding: 0 20px;
   }
+  .login-box {
+    margin-bottom: 50px;
+  }
 }

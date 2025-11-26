@@ -73,7 +73,7 @@
     overflow: hidden;
     display: flex;
     background: url("https://img.freepik.com/premium-photo/fitness-smile-portrait-friends-gym-teamwork-support-workout-motivation-coaching-health-with-people-training-sports-center-cardio-endurance-wellness-challenge_590464-130787.jpg?w=1060")
-      center center no-repeat fixed;
+      center center no-repeat;
     background-size: cover;
     padding: 0 20px;
   }

@@ -3,13 +3,21 @@
 import TopNav from "../../components/TopNav";
 import BottomNav from "../../components/BottomNav";
 import { useRouter } from "next/navigation";
-import { getUserName, getProfilePic, clearAll } from "../../utils/storage";
+import {
+  getUserName,
+  getUserId,
+  getProfilePic,
+  clearAll,
+} from "../../utils/storage";
 import "./dashboard.css";
 
 export default function Dashboard() {
   const r = useRouter();
 
   const name = typeof window !== "undefined" ? getUserName() ?? "User" : "User";
+
+  const id =
+    typeof window !== "undefined" ? getUserId() ?? "ID" : "id not found";
 
   const pic =
     typeof window !== "undefined"
@@ -32,6 +40,7 @@ export default function Dashboard() {
             <div>
               <div className="db-hi">Hi, {name}</div>
               <div className="db-sub">Welcome back to your Fitness Panel</div>
+              <div>ID : {id}</div>
             </div>
           </div>
 

@@ -220,11 +220,7 @@ export default function CompleteProfile() {
               Clear
             </button>
 
-            <button
-              type="submit"
-              className="cp-submit"
-              onClick={() => r.replace("/dashboard")}
-            >
+            <button type="submit" className="cp-submit">
               Save & Continue
             </button>
           </div>
